@@ -21,6 +21,7 @@ html,body{
 header{
     width: 100%;
     height: 90vh;
+    min-height: 800px;
     padding: 40px 2%;
     /*max-height: 700px;*/
     background-size: cover;
@@ -40,8 +41,44 @@ header nav{
     float: right;
 }
 
-nav.desktop-menu{
+nav.mobile-menu{
+    cursor: pointer;
     display: none;
+    width: 32px;
+    height: 32px;
+    background-image: url(../imagens/menu.png);
+    background-size: 100% 100%;
+}
+
+nav.mobile-menu ul{
+    opacity: 0;
+    transition: 1s;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 80px;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav.mobile-menu:hover ul{
+    opacity: 1;
+}
+
+nav.mobile-menu ul li{
+    padding: 8px 0;
+    transition: 0.4s;
+    border-bottom: 1px solid black;
+}
+
+nav.mobile-menu ul li:hover{
+    background-color: rgb(230,230,230);
+}
+
+nav.mobile-menu ul li a{
+    color: black;
+    text-decoration: none;
 }
 
 header nav.desktop-menu ul{
@@ -142,6 +179,56 @@ section.section1 .container{
     background-size: 100% 100%;
 }
 
+.section2{
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: white;
+    text-align: center;
+}
+
+.section2 .container{
+    max-width: 1000px;
+}
+
+.section2 h2{
+    color: #472663;
+    font-weight: 300;
+}
+
+.section2 p{
+    margin-top: 30px;
+    max-width: 900px;
+    display: inline-block;
+}
+
+.section2 img{
+    width: 100%;
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 830px){
+    .chamada1{
+        max-width: none;
+        width: 100%;
+        text-align: center;
+        float: none;
+        margin: 100px 0;
+    }
+
+    .chamada1 h2{
+        font-weight: 300;
+        font-size: 30px;
+        padding: 0 10px;
+        color: white;
+    }
+    
+    .chamada1 p{
+        font-size: 15px;
+        color: white;
+        margin-top: 10px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     header{
         width: 100%;
@@ -162,27 +249,6 @@ section.section1 .container{
         padding: 40px 2%;
         height: auto;
         text-align: center;
-    }
-
-    .chamada1{
-        max-width: none;
-        width: 100%;
-        text-align: center;
-        float: none;
-        margin: 100px 0;
-    }
-
-    .chamada1 h2{
-        font-weight: 300;
-        font-size: 30px;
-        padding: 0 10px;
-        color: white;
-    }
-    
-    .chamada1 p{
-        font-size: 15px;
-        color: white;
-        margin-top: 10px;
     }
 
     .text-section1{
@@ -210,5 +276,9 @@ section.section1 .container{
 
     .device-section1{
         display: none;
+    }
+
+    .section2{
+        padding: 40px 2%;
     }
 }
